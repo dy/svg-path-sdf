@@ -1,8 +1,12 @@
-# svg-path-sdf
+# svg-path-sdf [![experimental](https://img.shields.io/badge/stability-unstable-green.svg)](http://github.com/badges/stability-badges)
 
 Create signed distance field array for svg path data.
 
 ![svg-path-sdf](https://github.com/dfcreative/svg-path-sdf/blob/master/preview.png?raw=true)
+
+## Usage
+
+[![npm install svg-path-sdf](https://nodei.co/npm/svg-path-sdf.png?mini=true)](https://npmjs.org/package/svg-path-sdf/)
 
 ```js
 let pathSdf = require('svg-path-sdf')
