@@ -31,7 +31,6 @@ function pathSdf (path, options) {
 	let bounds = pathBounds(path)
 	let viewbox = options.viewbox || options.viewBox || bounds
 	let dim = [(viewbox[2] - viewbox[0]), (viewbox[3] - viewbox[1])]
-	let range = [bounds[2] - bounds[0], bounds[3] - bounds[1]]
 	let scale = [w / dim[0], h / dim[1]]
 	let maxScale = Math.min(scale[0] || 0, scale[1] || 0) / 2
 
