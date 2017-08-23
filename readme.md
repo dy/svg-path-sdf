@@ -13,18 +13,16 @@ let arr = pathSdf('M40,0A40,40 0 1,1 0,-40A40,40 0 0,1 40,0Z', {
 })
 ```
 
-`arr` has `200×200` elements with value from `0..1` range, corresponding to distance.
+`arr` has `200×200` elements with value from `0..1` range, corresponding to distance. The path is drawn at the center of the sdf with scale trying to cover max side not losing details.
 
 ## distances = pathSdf(path, options|shape?)
 
 Option | Meaning
 ---|---
-`width`|`w`, `height`|`h` or `shape` | Output sdf size in px, defaults to `200×200`.
+`width`,`w`, `height`,`h` or `shape` | Output sdf size in px, defaults to `200×200`.
 `cutoff`, `radius` | SDF parameters for [bitmap-sdf](https://github.com/dfcreative/bitmap-sdf), by default detected from shape.
 `viewBox` | View box for the path data. If not defined, it is detected as path bounds via [svg-path-bounds](https://github.com/dfcreative/svg-path-bounds).
 
-
-The path is drawn at the center of the sdf with scale corresponding to pixels.
 
 ## License
 
