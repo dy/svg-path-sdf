@@ -27,18 +27,15 @@
   },
   "homepage": "https://github.com/dfcreative/svg-path-sdf#readme",
   "dependencies": {
-    "abs-svg-path": "^0.1.1",
     "bitmap-sdf": "^1.0.0",
     "draw-svg-path": "^1.0.0",
     "is-svg-path": "^1.0.1",
-    "normalize-svg-coords": "^1.0.6",
-    "normalize-svg-path": "^1.0.1",
     "parse-svg-path": "^0.1.2",
     "svg-path-bounds": "^1.0.0"
   },
   "devDependencies": {
     "enable-mobile": "^1.0.7",
     "insert-styles": "^1.2.1",
-    "round": "^2.0.1"
+    "round-to": "^2.0.0"
   }
 }
