@@ -339,11 +339,11 @@ let shapes = {
 
 
 for (let name in shapes) {
-	let path = shapes[name](10)
+	let path = shapes[name](10) + shapes.circle(1)
     // if (name != 'triangle-left') continue
 
 	showPath(path)
-	showSdf(sdf(path, {w: 77, h: 77, viewBox: [-10, -10, 10, 10], stroke: 0}))
+	showSdf(sdf(path, {w: 77, h: 77, viewBox: [-10, -10, 10, 10], stroke: -2}))
 }
 
 
