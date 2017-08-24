@@ -343,7 +343,7 @@ for (let name in shapes) {
     // if (name != 'triangle-left') continue
 
 	showPath(path)
-	showSdf(sdf(path, {w: 77, h: 77, viewBox: [-10, -10, 10, 10]}))
+	showSdf(sdf(path, {w: 77, h: 77, viewBox: [-10, -10, 10, 10], stroke: 0}))
 }
 
 

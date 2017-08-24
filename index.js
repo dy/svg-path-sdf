@@ -28,10 +28,10 @@ function pathSdf (path, options) {
 	}
 	let size = Math.min(w, h)
 
-	let bounds = pathBounds(path)
-	let viewbox = options.viewbox || options.viewBox || bounds
-	let dim = [(viewbox[2] - viewbox[0]), (viewbox[3] - viewbox[1])]
-	let scale = [w / dim[0], h / dim[1]]
+	let stroke = options.stroke || 0
+
+	let viewbox = options.viewbox || options.viewBox || pathBounds(path)
+	let scale = [w / (viewbox[2] - viewbox[0]), h / (viewbox[3] - viewbox[1])]
 	let maxScale = Math.min(scale[0] || 0, scale[1] || 0) / 2
 
 	//clear ctx
@@ -39,7 +39,18 @@ function pathSdf (path, options) {
 	ctx.fillRect(0, 0, w, h)
 
 	ctx.fillStyle = 'white'
-	ctx.strokeStyle = 'white'
+
+	if (stroke)	{
+		if (typeof stroke != 'number') stroke = 1
+		if (stroke > 0) {
+			ctx.strokeStyle = 'white'
+		}
+		else {
+			ctx.strokeStyle = 'black'
+		}
+
+		ctx.lineWidth = Math.abs(stroke)
+	}
 
 	ctx.translate(w * .5, h * .5)
 	ctx.scale(maxScale, maxScale)
@@ -48,14 +59,14 @@ function pathSdf (path, options) {
 	if (global.Path2D) {
 		let path2d = new Path2D(path)
 		ctx.fill(path2d)
-		ctx.stroke(path2d)
+		stroke && ctx.stroke(path2d)
 	}
 	//fallback to bezier-curves
 	else {
 		let segments = parsePath(path)
 		drawPath(ctx, segments)
 		ctx.fill()
-		ctx.stroke()
+		stroke && ctx.stroke()
 	}
 
 	ctx.setTransform(1, 0, 0, 1, 0, 0);
