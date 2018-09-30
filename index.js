@@ -12,6 +12,7 @@ var ctx = canvas.getContext('2d')
 
 module.exports = pathSdf
 
+
 function pathSdf (path, options) {
 	if (!isSvgPath(path)) throw Error('Argument should be valid svg path string')
 
@@ -56,7 +57,7 @@ function pathSdf (path, options) {
 	ctx.scale(maxScale, maxScale)
 
 	//if canvas svg paths api is available
-	if (global.Path2D) {
+	if (isPath2DSupported()) {
 		var path2d = new Path2D(path)
 		ctx.fill(path2d)
 		stroke && ctx.stroke(path2d)
@@ -77,4 +78,18 @@ function pathSdf (path, options) {
 	})
 
 	return data
+}
+
+function isPath2DSupported () {
+	var ctx = document.createElement('canvas').getContext('2d')
+	ctx.canvas.width = ctx.canvas.height = 1
+
+	var path = new Path2D('M0,0h1v1h-1v-1Z')
+
+	ctx.fillStyle = 'black'
+	ctx.fill(path)
+
+	var idata = ctx.getImageData(0,0,1,1)
+
+	return idata && idata.data && idata.data[3] === 255
 }
