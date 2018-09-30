@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfcreative/svg-path-sdf.git"
+    "url": "git+https://github.com/dy/svg-path-sdf.git"
   },
   "keywords": [
     "sdf",
@@ -23,9 +23,9 @@
   "author": "Dima Yv <df.creative@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dfcreative/svg-path-sdf/issues"
+    "url": "https://github.com/dy/svg-path-sdf/issues"
   },
-  "homepage": "https://github.com/dfcreative/svg-path-sdf#readme",
+  "homepage": "https://github.com/dy/svg-path-sdf#readme",
   "dependencies": {
     "bitmap-sdf": "^1.0.0",
     "draw-svg-path": "^1.0.0",

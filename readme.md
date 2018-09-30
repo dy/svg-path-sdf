@@ -2,7 +2,7 @@
 
 Create signed distance field for an svg path data.
 
-![svg-path-sdf](https://github.com/dfcreative/svg-path-sdf/blob/master/preview.png?raw=true)
+![svg-path-sdf](https://github.com/dy/svg-path-sdf/blob/master/preview.png?raw=true)
 
 ## Usage
 
@@ -24,8 +24,8 @@ let arr = pathSdf('M40,0A40,40 0 1,1 0,-40A40,40 0 0,1 40,0Z', {
 Option | Meaning
 ---|---
 `width`,`w`, `height`,`h` or `shape` | Output sdf size in px, defaults to `200×200`.
-`cutoff`, `radius` | SDF parameters for [bitmap-sdf](https://github.com/dfcreative/bitmap-sdf), by default detected from shape to fit min side.
-`viewBox` | View box for the path data. If not defined, it is detected as path bounds via [svg-path-bounds](https://github.com/dfcreative/svg-path-bounds).
+`cutoff`, `radius` | SDF parameters for [bitmap-sdf](https://github.com/dy/bitmap-sdf), by default detected from shape to fit min side.
+`viewBox` | View box for the path data. If not defined, it is detected as path bounds via [svg-path-bounds](https://github.com/dy/svg-path-bounds).
 `stroke` | Whether to stroke shape. Positive number will stroke outside the amount of pixels, negative number will stroke inside, `0`-ish will disable stroke.
 
 ## License
