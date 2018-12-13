@@ -34,6 +34,7 @@
     "svg-path-bounds": "^1.0.1"
   },
   "devDependencies": {
+    "bubleify": "^1.2.0",
     "enable-mobile": "^1.0.7",
     "insert-styles": "^1.2.1",
     "round-to": "^2.0.0"

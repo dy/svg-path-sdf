@@ -80,9 +80,15 @@ function pathSdf (path, options) {
 	return data
 }
 
+var path2DSupported
+
 function isPath2DSupported () {
+	if (path2DSupported != null) return path2DSupported
+
 	var ctx = document.createElement('canvas').getContext('2d')
 	ctx.canvas.width = ctx.canvas.height = 1
+
+	if (!window.Path2D) return path2DSupported = false
 
 	var path = new Path2D('M0,0h1v1h-1v-1Z')
 
@@ -91,5 +97,5 @@ function isPath2DSupported () {
 
 	var idata = ctx.getImageData(0,0,1,1)
 
-	return idata && idata.data && idata.data[3] === 255
+	return path2DSupported = idata && idata.data && idata.data[3] === 255
 }

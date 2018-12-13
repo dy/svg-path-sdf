@@ -8,6 +8,17 @@ require('insert-styles')(`
     }
 `)
 let sdf = require('./')
+
+// polyfills
+Number.isInteger = Number.isInteger || function(value) {
+  return typeof value === 'number' &&
+    isFinite(value) &&
+    Math.floor(value) === value;
+}
+Math.sign = Math.sign || function(x) {
+return ((x > 0) - (x < 0)) || +x;
+}
+
 let roundn = require('round-to')
 
 
@@ -362,6 +373,9 @@ function showPath (path) {
 
     ctx.translate(77/2, 77/2)
 
+    // IE fix
+    if (!window.Path2D) return;
+
     let path2d = new Path2D(path)
     // ctx.fill(path2d)
     ctx.stroke(path2d)
@@ -377,7 +391,7 @@ function showSdf (arr) {
 	let ctx = cnv.getContext('2d')
 	let w = cnv.width = dim
 	let h = cnv.height = dim
-	let iData = new ImageData(w, h)
+	let iData = ctx.createImageData(w, h) //new ImageData(w, h)
 	let data = iData.data
 
 	for (let i = 0; i < w; i++) {
