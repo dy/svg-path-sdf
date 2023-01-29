@@ -33,3 +33,6 @@ Option | Meaning
 (c) 2017 Dima Yv. MIT License
 
 Development supported by plot.ly.
+
+<p align=center><a href="https://github.com/krishnized/license/">🕉</a></p>
+
