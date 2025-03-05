@@ -25,7 +25,7 @@ Option | Meaning
 ---|---
 `width`, `height` | Output sdf size in px, defaults to `200×200`.
 `cutoff`, `radius` | SDF parameters for [bitmap-sdf](https://github.com/dy/bitmap-sdf), by default detected from shape to fit min side.
-`viewBox` | View box for the path data. If not defined, it is detected as path bounds via [svg-path-bounds](https://github.com/dy/svg-path-bounds).
+`viewbox` | View box for the path data. If not defined, it is detected as path bounds via [svg-path-bounds](https://github.com/dy/svg-path-bounds).
 `stroke` | Whether to stroke shape. Positive number will stroke outside the amount of pixels, negative number will stroke inside, `0`-ish will disable stroke.
 
 ## License
