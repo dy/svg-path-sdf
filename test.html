@@ -55,7 +55,6 @@
         document.body.appendChild(cnv);
       }
 
-      // Basic SDF placeholder (since original SDF module isn't available)
       function showSdf(path, name) {
         let arr = sdf(path, {w: 77, h: 77, viewBox: [-10, -10, 10, 10], stroke: -2})
         let dim = Math.sqrt(arr.length)
