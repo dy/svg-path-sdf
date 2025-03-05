@@ -4,7 +4,7 @@
   "description": "Get signed distance field for a svg path",
   "main": "index.js",
   "scripts": {
-    "test": "budo test"
+    "build": "esbuild index.js --bundle --outfile=svg-path-sdf.js --minify --format=esm"
   },
   "repository": {
     "type": "git",
@@ -28,15 +28,8 @@
   "homepage": "https://github.com/dy/svg-path-sdf#readme",
   "dependencies": {
     "bitmap-sdf": "^1.0.0",
-    "draw-svg-path": "^1.0.0",
     "is-svg-path": "^1.0.1",
     "parse-svg-path": "^0.1.2",
     "svg-path-bounds": "^1.0.1"
-  },
-  "devDependencies": {
-    "bubleify": "^1.2.0",
-    "enable-mobile": "^1.0.7",
-    "insert-styles": "^1.2.1",
-    "round-to": "^2.0.0"
   }
 }

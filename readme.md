@@ -9,9 +9,9 @@ Create signed distance field for an svg path data.
 [![npm install svg-path-sdf](https://nodei.co/npm/svg-path-sdf.png?mini=true)](https://npmjs.org/package/svg-path-sdf/)
 
 ```js
-let pathSdf = require('svg-path-sdf')
+import pathSdf from 'svg-path-sdf'
 
-let arr = pathSdf('M40,0A40,40 0 1,1 0,-40A40,40 0 0,1 40,0Z', {
+const arr = pathSdf('M40,0A40,40 0 1,1 0,-40A40,40 0 0,1 40,0Z', {
 	width: 200,
 	height: 200
 })
@@ -23,7 +23,7 @@ let arr = pathSdf('M40,0A40,40 0 1,1 0,-40A40,40 0 0,1 40,0Z', {
 
 Option | Meaning
 ---|---
-`width`,`w`, `height`,`h` or `shape` | Output sdf size in px, defaults to `200×200`.
+`width`, `height` | Output sdf size in px, defaults to `200×200`.
 `cutoff`, `radius` | SDF parameters for [bitmap-sdf](https://github.com/dy/bitmap-sdf), by default detected from shape to fit min side.
 `viewBox` | View box for the path data. If not defined, it is detected as path bounds via [svg-path-bounds](https://github.com/dy/svg-path-bounds).
 `stroke` | Whether to stroke shape. Positive number will stroke outside the amount of pixels, negative number will stroke inside, `0`-ish will disable stroke.
@@ -35,4 +35,3 @@ Option | Meaning
 Development supported by plot.ly.
 
 <p align=center><a href="https://github.com/krishnized/license/">🕉</a></p>
-
